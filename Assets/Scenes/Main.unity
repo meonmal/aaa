@@ -134,6 +134,7 @@ GameObject:
   - component: {fileID: 519420031}
   - component: {fileID: 519420029}
   - component: {fileID: 519420030}
+  - component: {fileID: 519420033}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -259,6 +260,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &519420033
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de1d45cb66ac102488da2b02c1c9cf08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 0}
 --- !u!1 &619394800
 GameObject:
   m_ObjectHideFlags: 0
@@ -370,7 +384,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4995b23aa12977e49b6e05c43b8f3f3e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlayerPrefab: {fileID: 8933884038044049011, guid: 52947bcd3cf49374ba290fbd455607b4, type: 3}
+  SlimePrefab: {fileID: 8933884038044049011, guid: 52947bcd3cf49374ba290fbd455607b4, type: 3}
   GoblinPrefab: {fileID: 7005132782777544855, guid: 54d713b9cf1c7404b874080b13739aa4, type: 3}
   SnakePrefab: {fileID: 8452015822385582378, guid: c6678c9803ac3b348b0121d513a0d87c, type: 3}
 --- !u!4 &1011755095
@@ -439,6 +453,10 @@ PrefabInstance:
     - target: {fileID: 1720304782897721036, guid: e41ebcf84cad3a744bf90b2ec4e1c2d2, type: 3}
       propertyPath: m_Name
       value: Map
+      objectReference: {fileID: 0}
+    - target: {fileID: 2838685676562580103, guid: e41ebcf84cad3a744bf90b2ec4e1c2d2, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

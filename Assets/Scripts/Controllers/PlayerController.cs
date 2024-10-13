@@ -11,28 +11,36 @@ public class PlayerController : MonoBehaviour
     public void Update()
     {
         UpdateInput();
-        MovePlayer();
     }
 
 
     public void UpdateInput()
     {
-        Vector2 MoveDir = Vector2.zero;
+        Vector3 MoveDir = Vector3.zero;
 
         if (Input.GetKey(KeyCode.W))
+        {
             MoveDir.y += 1;
+        }
+            
         if (Input.GetKey(KeyCode.A))
+        {
             MoveDir.x -= 1;
+        }
+            
         if (Input.GetKey(KeyCode.S))
+        {
             MoveDir.y -= 1;
+        }
+            
         if (Input.GetKey(KeyCode.D))
+        {
             MoveDir.x += 1;
+        }
+            
 
         MoveDir = MoveDir.normalized;
-    }
 
-    public void MovePlayer()
-    {
         Vector3 dir = MoveDir * MoveSpeed * Time.deltaTime;
         transform.position += dir;
     }

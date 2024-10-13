@@ -4,26 +4,28 @@ using UnityEngine;
 
 public class GameScene : MonoBehaviour
 {
-    public GameObject PlayerPrefab;
+    public GameObject SlimePrefab;
     public GameObject GoblinPrefab;
     public GameObject SnakePrefab;
 
     GameObject Snake;
     GameObject Goblin;
-    GameObject Player;
+    GameObject Slime;
 
     private void Start()
     {
-        GameObject.Instantiate(PlayerPrefab);
+        GameObject.Instantiate(SlimePrefab);
 
         Snake = GameObject.Instantiate(SnakePrefab);
         Goblin = GameObject.Instantiate(GoblinPrefab);
-        
+        Slime = GameObject.Instantiate(SlimePrefab);
 
         GameObject gogo = new GameObject() { name = "Monsters" };
         Snake.transform.parent = gogo.transform;
         Goblin.transform.parent = gogo.transform;
 
-        PlayerPrefab.AddComponent<PlayerController>();
+        SlimePrefab.AddComponent<PlayerController>();
+
+        Camera.main.GetComponent<CameraController>().target = Slime;
     }
 }
