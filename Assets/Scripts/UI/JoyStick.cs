@@ -33,6 +33,8 @@ public class JoyStick : MonoBehaviour, IPointerClickHandler, IPointerDownHandler
         //Debug.Log("OmPointerUp");
         Handler.transform.position = touchPosition;
         moveDir = Vector2.zero;
+
+        //Manager.Game.MoveDir = moveDir;
     }
 
     public void OnPointerDown(PointerEventData eventData)

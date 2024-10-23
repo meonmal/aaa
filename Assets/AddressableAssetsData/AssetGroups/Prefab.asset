@@ -1,0 +1,43 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Prefab
+  m_EditorClassIdentifier: 
+  m_GroupName: Prefab
+  m_Data:
+    m_SerializedData: []
+  m_GUID: 38aeaed3bd3ccc54bb089be1bcd5eb11
+  m_SerializeEntries:
+  - m_GUID: 54d713b9cf1c7404b874080b13739aa4
+    m_Address: Goblin.Prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Prefabs
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 52947bcd3cf49374ba290fbd455607b4
+    m_Address: Player.Prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Prefabs
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c6678c9803ac3b348b0121d513a0d87c
+    m_Address: Snake.Prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Prefabs
+    FlaggedDuringContentUpdateRestriction: 0
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 8bb3d4459cbe00b42a30c59549be3437, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 29a21c65038c1704aae9f17eed6446a5, type: 2}
+    - {fileID: 11400000, guid: 966c2a07c26935a44a24918ba1759715, type: 2}

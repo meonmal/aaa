@@ -4,34 +4,44 @@ using UnityEngine;
 
 public class GameScene : MonoBehaviour
 {
-    public GameObject SlimePrefab;
-    public GameObject GoblinPrefab;
-    public GameObject SnakePrefab;
-    public GameObject joystickPrefab;
-
-    GameObject Snake;
-    GameObject Goblin;
-    GameObject Slime;
-    GameObject joystick;
 
     private void Start()
     {
-        GameObject.Instantiate(SlimePrefab);
+        //Resources.Load<GameObject>("Prefab");
 
-        Snake = GameObject.Instantiate(SnakePrefab);
-        Goblin = GameObject.Instantiate(GoblinPrefab);
-        Slime = GameObject.Instantiate(SlimePrefab);
-        joystick = GameObject.Instantiate(joystickPrefab);
+        var a = Resources.Load<GameObject>("Prefabs");
 
-        GameObject gogo = new GameObject() { name = "Monsters" };
-        Snake.transform.parent = gogo.transform;
-        Goblin.transform.parent = gogo.transform;
+        void Start()
+        {
+            Manager.ResourceManager.LoadAllAsync<GameObject>("Prefabs", (key, count, totalCount) =>
+            {
+                Debug.Log($"{key} {count}/{totalCount}");
 
-        SlimePrefab.AddComponent<PlayerController>();
+                if (count == totalCount)
+                {
+                    Manager.ResourceManager.LoadAllAsync<TextAsset>("Data", (key3, count3, totalCount3) =>
+                    {
+                        if (count3 == totalCount3)
+                        {
+                            StartLoaded();
+                        }
+                    });
+                }
+            });
+        }
+    }
 
-        Camera.main.GetComponent<CameraController>().target = Slime;
+    void StartLoaded()
+    {
+        var player = Manager.ResourceManager.Instantiate("Slime_01.prefab");
+        player.AddComponent<PlayerController>();
 
+        var snake = Manager.ResourceManager.Instantiate("Snake_01.prefab");
+        var goblin = Manager.ResourceManager.Instantiate("Goblin_01.prefab");
+        var joystick = Manager.ResourceManager.Instantiate("UI_Joystick.prefab");
+        joystick.name = "@UI_Joystick";
 
-
+        var map = Manager.ResourceManager.Instantiate("Map.prefab");
+        map.name = "Map";
     }
 }

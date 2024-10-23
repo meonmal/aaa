@@ -37,7 +37,9 @@ public class PlayerController : MonoBehaviour
         {
             MoveDir.x += 1;
         }
-            
+
+        //MoveDir = Manager.Game.MoveDir;
+
 
         MoveDir = MoveDir.normalized;
 

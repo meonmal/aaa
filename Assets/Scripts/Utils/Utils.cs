@@ -14,6 +14,10 @@ public class Utils
             }
             return component;
         }
+        else
+        {
+            return component;
+        }
     }
 
     public static GameObject FindChild(GameObject go, string name = null, bool recursive = false)
@@ -50,7 +54,7 @@ public class Utils
         }
         else
         {
-            foreach(T component in go.GetComponentInChildren<T>())
+            foreach(T component in go.GetComponentsInChildren<T>())
             {
                 if(string.IsNullOrEmpty(name) || component.name == name)
                 {
